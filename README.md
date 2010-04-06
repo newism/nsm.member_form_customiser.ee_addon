@@ -8,6 +8,19 @@ Settings
 
 I've put the settings inside the actual accessory, bad I know but it was a quick solution to get something working.
 
-Comment out $this->hide array elements to remove fields from member profile.
+Add elements to $this->hide array to remove fields from form. Example:
+
+	var $hide = array(
+		// "bday_y",
+		// "url",
+		// "location",
+		// "occupation",
+		// "interests",
+		"aol_im",
+		"icq",
+		"yahoo_im",
+		"msn_im",
+		// "bio"
+	);
 
 @todo: Add a better settings form.
