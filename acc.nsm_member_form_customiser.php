@@ -20,11 +20,11 @@ class Nsm_member_form_customiser_acc
 	
 
 	var $hide = array(
-		// "bday_y",
+		"bday_y",
 		// "url",
-		// "location",
+		"location",
 		// "occupation",
-		// "interests",
+		"interests",
 		"aol_im",
 		"icq",
 		"yahoo_im",
@@ -32,11 +32,37 @@ class Nsm_member_form_customiser_acc
 		// "bio"
 	);
 
+	var $reorder = FALSE;
+	var $order = array(
+		"bday_y",
+		"url",
+		"location",
+		"occupation",
+		"interests",
+		"aol_im",
+		"icq",
+		"yahoo_im",
+		"msn_im",
+		"bio",
+		"m_field_id_1",
+		"m_field_id_2",
+		"m_field_id_3",
+		"m_field_id_4",
+		"m_field_id_5",
+		"m_field_id_6",
+	);
+
 	function set_sections()
 	{
 		$this->id = strtolower(__CLASS__);
 		$js = '<script type="text/javascript" charset="utf-8"> ';
 		$js .= '$("#'. implode(", #", $this->hide). '").parent().hide(); ';
+		if($this->reorder)
+		{
+			foreach (array_reverse($this->order) as $key){
+				$js .= '$("#'.$key.'").parent().prependTo("#registerUser form"); ';
+			}
+		}
 		$js .= '$("#accessoryTabs a.nsm_member_form_customiser_acc").parent().remove(); ';
 		$js .= '</script>';
 		$this->sections[] = $js;

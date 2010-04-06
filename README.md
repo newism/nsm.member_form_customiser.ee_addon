@@ -30,4 +30,26 @@ Add elements to $this->hide array to remove fields from form. Example:
 		// "bio"
 	);
 
-@todo: Add a better settings form.
+Fields (including custom fields) can be re-ordered by setting `$this->reorder = TRUE` and adding custom field keys to the $this->order. Custom fields must be in the following format: `m_field_id_1`. Example:
+
+	var $reorder = TRUE;
+	var $order = array(
+		// Place custom fields above standard fields
+		"m_field_id_1",
+		"m_field_id_2",
+		"m_field_id_3",
+		"m_field_id_4",
+		"m_field_id_5",
+		"m_field_id_6",
+		// add the standard custom fields
+		"bday_y",
+		"url",
+		"location",
+		"occupation",
+		"interests",
+		"aol_im",
+		"icq",
+		"yahoo_im",
+		"msn_im",
+		"bio",
+	);
