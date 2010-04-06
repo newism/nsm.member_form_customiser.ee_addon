@@ -15,6 +15,8 @@ Settings
 
 I've put the settings inside the actual accessory, bad I know but it was a quick solution to get something working.
 
+### Hiding custom fields
+
 Add elements to $this->hide array to remove fields from form. Example:
 
 	var $hide = array(
@@ -29,6 +31,8 @@ Add elements to $this->hide array to remove fields from form. Example:
 		"msn_im",
 		// "bio"
 	);
+
+### Reordering custom fields
 
 Fields (including custom fields) can be re-ordered by setting `$this->reorder = TRUE` and adding custom field keys to the $this->order. Custom fields must be in the following format: `m_field_id_1`. Example:
 
