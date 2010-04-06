@@ -3,6 +3,9 @@ NSM Member Form Customiser
 
 Show and hide CP member fields in "My Account".
 
+<img src="http://s3.amazonaws.com/ember/uiXFdFUOyK8aDORipRu2rlaLvJTi3fMY_l.png" width='900' />  
+"My Account" form.
+
 Settings
 --------
 
