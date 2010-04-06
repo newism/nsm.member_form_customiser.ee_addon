@@ -5,6 +5,11 @@ Show and hide CP member fields in "My Account".
 
 <img src="http://s3.amazonaws.com/ember/uiXFdFUOyK8aDORipRu2rlaLvJTi3fMY_l.png" width='900' />  
 
+Installation
+------------
+
+Install the accessory and limit it's display to "My Account". Note the accessory tab will be hidden but you should be able to check the source to see if it's working.
+
 Settings
 --------
 
