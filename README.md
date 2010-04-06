@@ -1,7 +1,7 @@
 NSM Member Form Customiser
 ==========================
 
-Show and hide CP member fields in "My Account".
+Hide standard custom CP member fields in "My Account". Re-order standard and custom CP Member fields.
 
 <img src="http://s3.amazonaws.com/ember/uiXFdFUOyK8aDORipRu2rlaLvJTi3fMY_l.png" width='900' />  
 

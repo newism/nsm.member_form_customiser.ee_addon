@@ -32,8 +32,10 @@ class Nsm_member_form_customiser_acc
 		// "bio"
 	);
 
-	var $reorder = FALSE;
+	var $reorder = TRUE;
 	var $order = array(
+		"m_field_id_1",
+		"m_field_id_2",
 		"bday_y",
 		"url",
 		"location",
@@ -43,12 +45,10 @@ class Nsm_member_form_customiser_acc
 		"icq",
 		"yahoo_im",
 		"msn_im",
+		"m_field_id_5",
 		"bio",
-		"m_field_id_1",
-		"m_field_id_2",
 		"m_field_id_3",
 		"m_field_id_4",
-		"m_field_id_5",
 		"m_field_id_6",
 	);
 
