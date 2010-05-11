@@ -12,13 +12,46 @@
  **/
 class Nsm_member_form_customiser_acc
 {
+	/**
+	 * The accessory id
+	 * @access public
+	 * @var $id string
+	 */
 	var $id;
-	var $version		= '0.0.1';
-	var $name			= 'NSM Member Form Customiser';
-	var $description	= 'Show and hide CP member fields';
-	var $sections		= array();
-	
 
+	/**
+	 * Version
+	 * @access public
+	 * @var $version string
+	 */
+	var $version		= '0.0.1';
+
+	/**
+	 * Name
+	 * @access public
+	 * @var $name string
+	 */
+	var $name			= 'NSM Member Form Customiser';
+
+	/**
+	 * Description
+	 * @access public
+	 * @var $description string
+	 */
+	var $description	= 'Show and hide CP member fields';
+
+	/**
+	 * The accessory sections
+	 * @access public
+	 * @var $sections array
+	 */
+	var $sections		= array();
+
+	/**
+	 * Member fields to hide
+	 * @access public
+	 * @var $hide array
+	 */
 	var $hide = array(
 		"bday_y",
 		// "url",
@@ -32,7 +65,18 @@ class Nsm_member_form_customiser_acc
 		// "bio"
 	);
 
+	/**
+	 * Reorder member fields?
+	 * @access public
+	 * @var $reorder booelan
+	 */
 	var $reorder = TRUE;
+
+	/**
+	 * Member fields order
+	 * @access public
+	 * @var $order array
+	 */
 	var $order = array(
 		"m_field_id_1",
 		"m_field_id_2",
@@ -52,7 +96,11 @@ class Nsm_member_form_customiser_acc
 		"m_field_id_6",
 	);
 
-	function set_sections()
+	/**
+	 * Creates the accessory sections then hides them.
+	 * Inserts js to hide the member fields
+	 */
+	public function set_sections()
 	{
 		$this->id = strtolower(__CLASS__);
 		$js = '<script type="text/javascript" charset="utf-8"> ';
