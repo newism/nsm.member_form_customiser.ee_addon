@@ -3,68 +3,44 @@
 /**
  * NSM Member Form Customiser Accessory
  *
- * @package NsmMemberFormCustomiser
- * @version 0.0.1
- * @author Leevi Graham <http://newism.com.au>
- * @copyright Copyright (c) 2007-2009 Newism
- * @license Commercial - please see LICENSE file included with this distribution
+ * Set the following in your config:
+ * 
+ * $config['nsm_member_form_customiser_hide'] = array();
+ * $config['nsm_member_form_customiser_order'] = array();
  *
- **/
+ * Array elements are the hidden fields. Custom fields must be represented as m_field_id_n where n is the field id
+ *
+ * @package			NsmMemberFormCustomiser
+ * @version			1.0.0
+ * @author			Leevi Graham <http://leevigraham.com> - Technical Director, Newism
+ * @copyright 		Copyright (c) 2007-2010 Newism <http://newism.com.au>
+ * @license 		Commercial - please see LICENSE file included with this distribution
+ * @link			http://expressionengine-addons.com/nsm-member-form-customiser
+ * @see				http://expressionengine.com/public_beta/docs/development/accessories.html
+ */
 class Nsm_member_form_customiser_acc
 {
 	var $id;
-	var $version		= '0.0.1';
+	var $version		= '1.0.0';
 	var $name			= 'NSM Member Form Customiser';
-	var $description	= 'Show and hide CP member fields';
+	var $description	= 'Show, hide and reorder member fields is the CP';
 	var $sections		= array();
-	
-
-	var $hide = array(
-		"bday_y",
-		// "url",
-		"location",
-		// "occupation",
-		"interests",
-		"aol_im",
-		"icq",
-		"yahoo_im",
-		"msn_im",
-		// "bio"
-	);
-
-	var $reorder = TRUE;
-	var $order = array(
-		"m_field_id_1",
-		"m_field_id_2",
-		"bday_y",
-		"url",
-		"location",
-		"occupation",
-		"interests",
-		"aol_im",
-		"icq",
-		"yahoo_im",
-		"msn_im",
-		"m_field_id_5",
-		"bio",
-		"m_field_id_3",
-		"m_field_id_4",
-		"m_field_id_6",
-	);
 
 	function set_sections()
 	{
-		$this->id = strtolower(__CLASS__);
-		$js = '<script type="text/javascript" charset="utf-8"> ';
-		$js .= '$("#'. implode(", #", $this->hide). '").parent().hide(); ';
-		if($this->reorder)
-		{
-			foreach (array_reverse($this->order) as $key){
+		$EE =& get_instance();
+
+		$js = '$("#accessoryTabs a.nsm_member_form_customiser_acc").parent().remove(); ';
+
+		if(is_array($hide = $EE->config->item('nsm_member_form_customiser_hide')))
+			$js .= '$("#'. implode(", #", $hide). '").parent().hide(); ';
+
+		if(is_array($order = $EE->config->item('nsm_member_form_customiser_order')))
+			foreach (array_reverse($order) as $key)
 				$js .= '$("#'.$key.'").parent().prependTo("#registerUser form"); ';
-			}
-		}
-		$js .= '$("#accessoryTabs a.nsm_member_form_customiser_acc").parent().remove(); ';
-		$js .= '</script>';
+
+		$this->id = strtolower(__CLASS__);
+		$js = '<script type="text/javascript" charset="utf-8">'.$js.'</script>';
 		$this->sections[] = $js;
 	}
 }

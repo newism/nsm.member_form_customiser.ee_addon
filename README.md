@@ -1,43 +1,33 @@
-NSM Member Form Customiser
-==========================
+# NSM Member Form Customiser
 
 Hide standard custom CP member fields in "My Account". Re-order standard and custom CP Member fields.
 
 <img src="http://s3.amazonaws.com/ember/MeDofHNpOcBWijSRlvUOKBOpukDB6l1W_l.png" width='900' />  
 
-Installation
-------------
+## Installation
 
 Install the accessory and limit it's display to "My Account". Note the accessory tab will be hidden but you should be able to check the source to see if it's working.
 
-Settings
---------
+## Configuration
 
-I've put the settings inside the actual accessory, bad I know but it was a quick solution to get something working.
+To hide custom fields add the following to your config.php
 
-### Hiding custom fields
-
-Add elements to $this->hide array to remove fields from form. Example:
-
-	var $hide = array(
-		// "bday_y",
-		// "url",
-		// "location",
-		// "occupation",
-		// "interests",
+	$config['nsm_member_form_customiser_hide'] = array(
+		"bday_y",
+		"url",
+		"location",
+		"occupation",
+		"interests",
 		"aol_im",
 		"icq",
 		"yahoo_im",
 		"msn_im",
-		// "bio"
+		"bio"
 	);
 
-### Reordering custom fields
+To reorder custom fields add the following to your config.php
 
-Fields (including custom fields) can be re-ordered by setting `$this->reorder = TRUE` and adding custom field keys to the $this->order. Custom fields must be in the following format: `m_field_id_1`. Example:
-
-	var $reorder = TRUE;
-	var $order = array(
+	$config['nsm_member_form_customiser_order'] = array(
 		// Place custom fields above standard fields
 		"m_field_id_1",
 		"m_field_id_2",
@@ -55,5 +45,7 @@ Fields (including custom fields) can be re-ordered by setting `$this->reorder = 
 		"icq",
 		"yahoo_im",
 		"msn_im",
-		"bio",
+		"bio"
 	);
+
+Custom fields must be in the following format: `m_field_id_n` where _n_ is the field_id.
