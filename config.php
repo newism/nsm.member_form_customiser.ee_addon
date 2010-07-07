@@ -12,6 +12,6 @@
  */
 
 $config['name'] 	= "NSM Example Addon";
-$config["version"] 	= "0.0.0";
+$config["version"] 	= "1.0.0";
 
 $config['nsm_addon_updater']['versions_xml'] = 'http://expressionengine-addons.com/nsm-member-form-customiser/versions';

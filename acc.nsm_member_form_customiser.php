@@ -8,7 +8,7 @@
  * $config['nsm_member_form_customiser_hide'] = array();
  * $config['nsm_member_form_customiser_order'] = array();
  *
- * Array elements are the hidden fields. Custom fields must be represented as m_field_id_n where n is the field id
+ * Array elements are the member fields. Custom fields must be represented as m_field_id_n where n is the field id
  *
  * @package			NsmMemberFormCustomiser
  * @version			1.0.0
